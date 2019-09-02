@@ -1,0 +1,5 @@
+---
+name: default
+title: Webcounter service installation
+summary: Test suite for basic check of the webcounter service installation
+version: 0.1.0

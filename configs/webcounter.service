@@ -1,0 +1,11 @@
+[Unit]
+Description=A smiple redis counter web app
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/webcounter
+ExecStart=/opt/webcounter/webcounter
+
+[Install]
+WantedBy=multi-user.target
