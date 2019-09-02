@@ -1,0 +1,23 @@
+---
+driver:
+  name: ec2
+  associate_public_ip: true
+
+provisioner:
+  name: shell
+
+transport:
+  username: ubuntu
+
+platforms:
+- name: ubuntu-webcounter
+  driver:
+    image_search:
+      owner-id: "045273941545"
+      name: "webcounter-*-*"
+
+verifier:
+  name: inspec
+
+suites:
+  - name: default
