@@ -18,7 +18,7 @@ The packer template is in `template.json` file. In the `variables` section you c
 
 Run `packer validate template.json` - to make basic template validation.
 
-Run `packer build -var 'wc_ver=0.6.1' template.json` - to build the Vagrant box with packer.
+Run `packer build -var 'wc_ver=0.6.1' template.json` - to build the AWS AMI with packer.
 
 ## Testing with KitchenCI
 
