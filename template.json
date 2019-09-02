@@ -3,9 +3,6 @@
         "aws_base_ami_id": "ami-0cddf7994f6cbae36",
         "wc_ver": "0.6.1"
     },
-    "sensitive-variables": [
-        "aws_secret_access_key"
-    ],
     "builders": [
         {
             "type": "amazon-ebs",
