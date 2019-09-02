@@ -1,0 +1,42 @@
+{
+    "variables": {
+        "aws_base_ami_id": "ami-0cddf7994f6cbae36",
+        "wc_ver": "0.6.1"
+    },
+    "sensitive-variables": [
+        "aws_secret_access_key"
+    ],
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "access_key": "{{user `aws_access_key_id`}}",
+            "secret_key": "{{user `aws_secret_access_key`}}",
+            "region": "{{user `aws_region`}}",
+            "ssh_username": "ubuntu",
+            "source_ami": "{{user `aws_base_ami_id`}}",
+            "instance_type": "t2.micro",
+            "ami_name": "webcounter-{{user `wc_ver`}}-{{isotime \"20060102\"}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "configs/webcounter.service",
+            "destination": "/tmp/webcounter.service",
+            "direction": "upload"
+          },
+          {
+            "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash {{.Path}}",
+            "scripts": [
+              "scripts/webcounter_install.sh",
+              "scripts/webcounter_service_setup.sh",
+              "scripts/cleanup_final.sh"
+            ],
+            "environment_vars": [
+              "DEBIAN_FRONTEND=noninteractive",
+              "WC_VER={{user `wc_ver`}}"
+            ],
+            "type": "shell"
+          }
+    ]
+}
