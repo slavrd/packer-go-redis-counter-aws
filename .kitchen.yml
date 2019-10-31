@@ -13,7 +13,7 @@ platforms:
 - name: ubuntu-webcounter
   driver:
     image_search:
-      owner-id: "045273941545"
+      owner-id: "938620692197"
       name: "slav-webcounter-*-*"
 
 verifier:
