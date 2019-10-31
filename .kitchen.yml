@@ -14,7 +14,7 @@ platforms:
   driver:
     image_search:
       owner-id: "045273941545"
-      name: "webcounter-*-*"
+      name: "slav-webcounter-*-*"
 
 verifier:
   name: inspec
