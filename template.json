@@ -9,7 +9,7 @@
             "ssh_username": "ubuntu",
             "source_ami": "{{user `aws_base_ami_id`}}",
             "instance_type": "t2.micro",
-            "ami_name": "webcounter-{{user `wc_ver`}}-{{isotime \"20060102\"}}"
+            "ami_name": "slav-webcounter-{{user `wc_ver`}}-{{isotime \"20060102\"}}"
         }
     ],
     "provisioners": [
