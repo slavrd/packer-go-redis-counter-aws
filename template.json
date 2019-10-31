@@ -1,7 +1,7 @@
 {
     "variables": {
-        "aws_base_ami_id": "ami-0cddf7994f6cbae36",
-        "wc_ver": "0.6.1"
+        "aws_base_ami_id": "ami-040a1551f9c9d11ad",
+        "wc_ver": "0.7.1"
     },
     "builders": [
         {
