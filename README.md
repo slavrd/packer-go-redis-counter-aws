@@ -37,7 +37,7 @@ Kitchen will need AWS access to manage an EC2 instance life cycle. Credentials n
 
 Note: that the AWS region must be set as environment variable `export AWS_REGION=my-region` or added as key `driver.region` in `.kitchen.yml`. Using the `~/.aws/config` to set the region will not work.
 
-By default the test will check the latest AMI which name matches `webcounter-*-*`. In case a different AMI needs to be tested modify the key `driver.image_search.name` under platform `ubuntu-webcounter` in `.kitchen.yml`
+The ami owner and name search pattern are defined in `.kitchen.yml`. Currently the test will check the latest AMI with the defined owner and name that matches `slav-webcounter-*-*`. In case a different AMI needs to be tested modify the key `driver.image_search.name` and/or `driver.image_search.owner` under platform `ubuntu-webcounter` in `.kitchen.yml`
 
 ### Running Kitchen tests
 
