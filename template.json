@@ -1,7 +1,9 @@
 {
     "variables": {
         "aws_base_ami_id": "ami-040a1551f9c9d11ad",
-        "wc_ver": "0.7.1"
+        "wc_ver": "0.7.1",
+        "tag_owner": "slav",
+        "tag_project": "redis-counter"
     },
     "builders": [
         {
@@ -9,7 +11,12 @@
             "ssh_username": "ubuntu",
             "source_ami": "{{user `aws_base_ami_id`}}",
             "instance_type": "t2.micro",
-            "ami_name": "slav-webcounter-{{user `wc_ver`}}-{{isotime \"20060102\"}}"
+            "ami_name": "slav-webcounter-{{user `wc_ver`}}-{{isotime \"20060102\"}}",
+            "tags": {
+              "owner": "{{user `tag_owner`}}",
+              "project": "{{user `tag_project`}}",
+              "base_ami": "{{user `aws_base_ami_id`}}"
+            }
         }
     ],
     "provisioners": [
